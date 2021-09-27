@@ -1,0 +1,76 @@
+{% extends 'becomarketing/base.html' %}
+{% load static %}
+{% block title %}login here{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+   
+    <style>
+         input{
+            padding: 5px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            width: 8cm;
+        }
+      
+    </style>
+</head>
+<body>
+  
+
+  <div class="container-fluid">
+    <div class="row">
+
+    <div class="col-md-4">
+      <div class="photo">
+        <img src="{% static 'becomarketing/images/w.jpeg' %}" alt="" style="width: 500px;">
+    
+    </div><!--mwisho wa column 4-->
+    </div>
+
+   <div class="col-md-6"> 
+
+  <div style="text-align: center;margin-top: 5px;background-color: lightblue;">
+     <h1 style="font-family: bold;">MarryDesigner</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+<label>UserName</label><br>
+<input type="text" name="username" required><br>
+
+<label>Password</label><br>
+<input type="text" name="password" required><br>
+
+{% if messages %}
+{% for message in messages %}
+  <div style="margin-top:5rem;" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  <h3 style="color: red;font-weight: bold;font-family: bold;font-size: 12px;">  {{message}}</h3>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{% endfor %}
+{% endif %}
+
+<button type="submit">Login</button>
+
+</form>
+</div>
+</div><!--mwisho wa column ya width 6-->
+</div><!--mwisho wa row-->
+</div><!--mwisho wa column-->
+    <script src={% static 'becomarketing/"js/wow.min.js' %}"></script><script src="js/jquery-1.12.0.min.js"></script>
+<script src="{% static 'becomarketing/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
+{% endblock %}

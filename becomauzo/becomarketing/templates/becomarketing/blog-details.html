@@ -1,0 +1,137 @@
+
+{% extends 'becomarketing/base.html' %}
+{% load static %}
+{% load cart_template_tags %}
+{% block title %}service details{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+ 
+  <!-- =======================================================
+  * Template Name: eBusiness - v4.3.0
+  * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Blog Page ======= -->
+    <div class="blog-page area-padding">
+      <div class="container">
+        <div class="row">
+
+          <!-- Start single blog -->
+          <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <!-- single-blog start -->
+                
+                <article class="blog-post-wrapper">
+                  <div class="post-thumbnail">
+                    <img src="{{item.image.url}}" style="width:1500px;height: 800px;" alt="" />
+                  </div>
+                  <div class="post-information">
+                    <h2>{{item.title}}</h2>
+                    <div class="entry-meta">
+                      <span><i class="bi bi-clock"></i> {{item.created}}</span>
+                     </div>
+                    <div class="entry-content">
+                      <p>
+
+                        {{item.description}}
+                      <p>
+                        <h4 class="font-weight-bold blue-text">
+                          {% if item.discount_price %}
+                          <p style="color: blueviolet;font-weight: bold;font-size: 18px;margin-left: 20px;font-family: bold;">Discount Price:Tz {{item.discount_price}} sh.</p>
+                        <del>  <strong style="font-weight: bold;font-size: 15px;">Price:Tz {{item.price}} sh.</strong></del>
+                          
+                          {% else %}
+                          <p style="color: blueviolet;font-weight: bold;font-size: 18px;margin-left: 20px;font-family: bold;">Price:Tz {{item.discount_price}} sh.</p>
+                    
+                          {% endif %}
+                        </h4>
+
+                       </p>
+                    </div>
+                  </div>
+                </article>
+                <div class="clear"></div>
+
+                  <div class="comment-respond">
+                  <!---- <input type="submit" value="Weka Oda" />
+                   <input type="submit" value="Ondoa Oda" />--->
+                 
+                   <a href="{{item.get_add_to_cart_url}}" class="btn btn-primary btn-md my-0 p" type="submit">Weka Oda
+                    <i class="fas fa-shopping-cart ml-1"></i>
+                  </a>
+                  <a href="{{item.get_remove_from_cart_url}}" class="btn btn-danger btn-md my-0 p" type="submit">Ondoa Oda
+                    <i class="fas fa-shopping-cart ml-1"></i>
+                  </a>
+
+
+
+                  </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                
+                <!-- single-blog end -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Blog Page -->
+
+  </main><!-- End #main -->
+
+  <div>
+
+    <ul class="navbar-nav nav-flex-icons">
+     
+     
+         
+        <li class="nav-item">
+          <p style="color: black;font-weight: bold;">
+            TOTAL ITEMS ORDERED:
+         
+          <button style="background-color:black;">  <span class="badge red z-depth-1 mr-1"style="color:red;font-size:20px;">{{ request.user|cart_item_count}}</span> </p>
+          </button>
+           
+            <i class="fas fa-shopping-cart"></i>
+            
+        <a href="{% url 'order_summary' %}" class="nav-link waves-effect">
+  
+            <button style="background-color:yellow;"> 
+   <span class="badge red z-depth-1 mr-1"style="color:red;font-size:20px;">Check Your Order</span> </p>
+            </button>
+  
+           
+        </a>
+       
+        
+        </li>
+    </ul>
+  
+  
+  
+  </div>
+
+</body>
+
+</html>
+{% endblock %}

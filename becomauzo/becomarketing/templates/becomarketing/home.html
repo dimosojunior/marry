@@ -1,0 +1,354 @@
+{% extends 'becomarketing/base.html' %}
+{% load static %}
+{% block title %}marry designer homepage{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+
+  <!-- =======================================================
+  * Template Name: eBusiness - v4.3.0
+  * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+</head>
+
+<body>
+
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="about-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2> MARRY DESIGNER</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- single-well start-->
+          {% for x in home_header_image %}
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="well-left">
+              <div class="single-well">
+                <a href="#">
+                  <img src="{{x.image.url}}" alt="" style="width:600px;height: 400px;">
+                </a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- single-well end-->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="well-middle">
+              <div class="single-well">
+                <a href="#">
+                  <h4 class="sec-head">MarryDesigner Partnership services</h4>
+                </a>
+                <p>
+                  pia tunatoa huduma zifutazo kwa kushirikiana na DimosoGlobalDesigner
+                  kwa bei nafuu zaidi.
+                  
+                 </p>
+                <ul>
+                  <li>
+                    <i class="bi bi-check"></i> Utengenezaji wa mifumo
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i> Utengenezaji wa Graphics
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i> Utengenezaji Video
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i> Utengenezaji Mobile App
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i> Kuediti Video  
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- End col-->
+        </div>
+      </div>
+    </div><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <div id="services" class="services-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline services-head text-center">
+              <h2>Huduma Zetu</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center">
+          <!-- Start Left services -->
+          {% for x in ourservices %}
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="about-move">
+              <div class="services-details">
+                <div class="single-services">
+                  <a class="services-icon" href="#">
+                    
+                    <img src="{{x.image.url}}" style="width: 200px;height: 200px;;" alt="">
+             
+                  </a>
+                  <h4 style="font-family: bold;"> {{x.title}}</h4>
+                  <p style="font-weight: bold;color: black;">
+                    {{x.description}}
+                   </p>
+                </div>
+              </div>
+              
+              <!-- end about-details -->
+            </div>
+          </div>
+          {% endfor %}
+                 </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Services Section -->
+
+    <!-- ======= Team Section ======= -->
+    <div id="team" class="our-team-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>MarryDesigner Team</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for x in team %}
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="single-team-member">
+              <div class="team-img">
+                <a href="#">
+                  <img src="{{x.image.url}}" style="width: 400px;height: 400px;;" alt="">
+                </a>
+                <div class="team-social-icon text-center">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <i class="bi bi-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="bi bi-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="bi bi-instagram"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content text-center">
+                <h4>{{x.title}}</h4>
+                <p>{{x.description}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- End column --></div>
+      </div>
+    </div><!-- End Team Section -->
+
+    <!-- ======= Rviews Section ======= -->
+    <div class="reviews-area">
+      <div class="row g-0">
+        <div class="col-lg-6">
+          <img src="{% static 'becomarketing/assets/img/about/2.jpg' %}" alt="" class="img-fluid">
+        </div>
+        <div class="col-lg-6 work-right-text d-flex align-items-center">
+          <div class="px-5 py-5 py-lg-0">
+            <h2>wasiliana nasi</h2>
+            <h5>mafunzo ya ushonaji, ushonaji wa nguo,
+               utengenezaji wa nguo mpya,N.K.</h5>
+            <a href="#contact" class="ready-btn scrollto">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Rviews Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <div id="portfolio" class="portfolio-area area-padding fix">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Featured Services</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row wesome-project-1 fix">
+          <!-- Start Portfolio -page -->
+       
+        </div>
+
+        <div class="row awesome-project-content portfolio-container">
+
+          <!-- portfolio-item start -->
+          {% for x in home_latest_services %}
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="{{x.image.url}}" style="width:600px ;height: 500px;" alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="portfolio-lightbox" data-gallery="myGallery" href="{% static 'becomarketing/assets/img/portfolio/1.jpg' %}">
+                      <h4>{{x.title}}</h4>
+                      
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- portfolio-item end -->
+
+        </div>
+      </div>
+    </div><!-- End Portfolio Section -->
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <div id="testimonials" class="testimonials">
+      
+      <div class="container">
+        
+        <div class="testimonials-slider swiper-container">
+          
+          <div class="swiper-wrapper">
+            {% for x in home_sliding_details %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                
+                <img src="{{x.image.url}}" class="testimonial-img" alt="">
+                <h3>{{x.title}} </h3>
+                
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+               {{x.description}}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            
+            </div><!-- End testimonial item -->
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </div><!-- End Testimonials Section -->
+
+    <!-- ======= Blog Section ======= -->
+    <div id="blog" class="blog-area">
+      <div class="blog-inner area-padding">
+        <div class="blog-overly"></div>
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <h2>Taarifa Zetu Mpya</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Start Left Blog -->
+            {% for x in home_service %}
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single-blog">
+                <div class="single-blog-img">
+                  <a href="blog.html">
+                    <img src="{{x.image.url}}" style="width: 600px;height: 450px;" alt="">
+                  </a>
+                </div>
+                <div class="blog-meta">
+                  <span class="comments-type">
+                    <i class="fa fa-comment-o"></i>
+                    
+                  </span>
+                  <span class="date-type">
+                    <i class="fa fa-calendar"></i>{{x.created}}
+                  </span>
+                </div>
+                <div class="blog-text">
+                  <h4>
+                    {{x.title}}
+                  </h4>
+                
+                  <p>
+                    {{x.description}}
+                    </p>
+                </div>
+                <span>
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'blog' %}" class="ready-btn">Read more</a>
+                  {% else %}
+                </span>
+                <span>
+                  
+                  <a href="{% url 'user_register' %}" class="ready-btn">Read more</a>
+                  {% endif %}
+                </span>
+              </div>
+              <!-- Start single blog -->
+            </div>
+            {% endfor %}
+            <!-- End Left Blog-->
+            
+    <!-- ======= Suscribe Section ======= -->
+    <div class="suscribe-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
+            <div class="suscribe-text text-center">
+              <h3>Karibu MarryDesigner Website</h3>
+              {% if user.is_authenticated %}
+              <a class="sus-btn" href="{% url 'blog' %}">Angalia Huduma Zetu</a>
+              {% else %}
+              <a class="sus-btn" href="{% url 'user_register' %}">Bonyeza hapa kama huna account</a>
+              {% endif %}
+            
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- End Suscribe Section -->
+
+  </main><!-- End #main -->
+
+
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends 'becomarketing/base.html' %}
+{% load static %}
+{% block title %}Services lists{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- =======================================================
+  * Template Name: eBusiness - v4.3.0
+  * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  
+
+    <!-- ======= Blog Page ======= -->
+    <div class="blog-page area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4">
+            <div class="page-head-blog">
+              <div class="single-blog-page">
+                <!-- search option start -->
+              
+                <!-- search option end -->
+              </div>
+              <div class="single-blog-page">
+                <!-- recent start -->
+                <div class="left-blog">
+                  <h4>Latest Services</h4>
+                  <div class="recent-post">
+                    <!-- start single post -->
+                    {% for x in cate %}
+                    <div class="recent-single-post">
+                      <div class="post-img">
+                        <a href="#">
+                         
+                          <img src="{{x.image.url}}" alt="">
+                        </a>
+                      </div>
+                      <div class="pst-content">
+                        <p style="color: black;font-weight: bold;font-family: bold;"><a href="#"> 
+                      {{x.description}}
+                        </a></p>
+                      </div>
+                    </div>
+                    {% endfor %}
+                    <!-- End single post -->
+                      </div>
+                </div>
+                <!-- recent end -->
+              </div>
+              <div class="single-blog-page">
+                <div class="left-blog">
+                  <h4>categories</h4>
+                  <ul>
+                    {% for x in categories %}
+                    <li>
+                     <a href="{{x.get_absolute_url}}" style="color: black;font-weight: bold;font-family: bold;"> {{x.name}}</a>
+                    </li>
+                    {% endfor %}
+                  
+                  </ul>
+                </div>
+              </div>
+           </div>
+                </div>
+             
+          <!-- End left sidebar -->
+          <!-- Start single blog -->
+          <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="row">
+              {% for object in item %}
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog-details.html">
+                      <img src="{{object.image.url}}" style="width: 800px;height: 500px;;" alt="">
+                    </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                      <i class="bi bi-chat"></i>
+                   <!----   <a href="#">11 comments</a>---->
+                    </span>
+                    <span class="date-type">
+                      <i class="bi bi-calendar">
+
+                      </i>{{object.created}}
+                    </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4 class="font-weight-bold blue-text">
+                      {% if object.discount_price %}
+                      <p style="color: blueviolet;font-weight: bold;font-size: 18px;margin-left: 20px;font-family: bold;">Discount Price:${{object.discount_price}}</p>
+                    <del>  <strong style="font-weight: bold;font-size: 15px;">Price:${{object.price}}</strong></del>
+                      
+                      {% else %}
+                      <p style="color: blueviolet;font-weight: bold;font-size: 18px;margin-left: 20px;font-family: bold;">Price:${{object.discount_price}}</p>
+                
+                      {% endif %}
+                    </h4>
+                    
+                    <h4>
+                      <a href="#">{{object.title}}</a>
+                    </h4>
+                    <p>
+
+                      {{object.description}}
+                     </p>
+                  </div>
+                  <span>
+                    <a href="{{object.get_absolute_url}}" class="ready-btn">Read more</a>
+                  </span>
+                  {% endfor %}
+                </div>
+              </div>
+              <!-- End single blog -->
+            
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Blog Page -->
+
+  </main><!-- End #main -->
+
+</body>
+
+</html>
+{% endblock %}
